@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form id="formLogin">
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+    <p id="mensagem"></p>
+
+    <script>
+        const formLogin = document.getElementById('formLogin');
+        formLogin.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+            const mensagem = document.getElementById('mensagem');
+
+            if (usuario === 'aluno_heriberto' && senha === 'aluno@123') {
+                mensagem.textContent = 'Login bem-sucedido!';
+            } else {
+                mensagem.textContent = 'Usuário ou senha incorretos.';
+            }
+        });
+    </script>
+</body>
+</html>

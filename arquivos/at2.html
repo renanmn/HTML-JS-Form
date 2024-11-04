@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Média de Notas</title>
+</head>
+<body>
+    <form id="formNotas">
+        <label for="nota1">Nota 1:</label>
+        <input type="number" id="nota1" required>
+        <label for="nota2">Nota 2:</label>
+        <input type="number" id="nota2" required>
+        <label for="nota3">Nota 3:</label>
+        <input type="number" id="nota3" required>
+        <button type="submit">Calcular Média</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        const formNotas = document.getElementById('formNotas');
+        formNotas.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nota1 = parseFloat(document.getElementById('nota1').value);
+            const nota2 = parseFloat(document.getElementById('nota2').value);
+            const nota3 = parseFloat(document.getElementById('nota3').value);
+            const media = (nota1 + nota2 + nota3) / 3;
+            document.getElementById('resultado').textContent = `A média é: ${media.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
