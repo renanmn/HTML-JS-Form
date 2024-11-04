@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Dados para JavaScript</title>
+</head>
+<body>
+
+    <!-- Formulário HTML -->
+    <form id="meuFormulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Seleciona o formulário
+        const formulario = document.getElementById('meuFormulario');
+
+        // Adiciona um evento 'submit' ao formulário
+        formulario.addEventListener('submit', function(event) {
+            // Evita o envio padrão do formulário (não recarrega a página)
+            event.preventDefault();
+
+            // Captura os dados dos campos de entrada
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+
+            // Exibe os dados no console
+            console.log('Nome:', nome);
+            console.log('Email:', email);
+
+            // Aqui você pode manipular os dados, enviá-los para uma API, etc.
+        });
+    </script>
+
+</body>
+</html>
